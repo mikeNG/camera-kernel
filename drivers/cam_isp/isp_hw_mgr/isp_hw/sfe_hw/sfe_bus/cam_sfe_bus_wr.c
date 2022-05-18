@@ -21,7 +21,6 @@
 #include "cam_sfe_bus_wr.h"
 #include "cam_sfe_core.h"
 #include "cam_sfe_soc.h"
-#include "cam_debug_util.h"
 #include "cam_cpas_api.h"
 #include "cam_trace.h"
 

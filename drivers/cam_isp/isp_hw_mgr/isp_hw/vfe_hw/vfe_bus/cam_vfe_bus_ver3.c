@@ -20,7 +20,6 @@
 #include "cam_vfe_bus_ver3.h"
 #include "cam_vfe_core.h"
 #include "cam_vfe_soc.h"
-#include "cam_debug_util.h"
 #include "cam_cpas_api.h"
 #include "cam_trace.h"
 

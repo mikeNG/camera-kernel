@@ -17,7 +17,6 @@
 #include "ipe_core.h"
 #include "ipe_soc.h"
 #include "cam_soc_util.h"
-#include "cam_io_util.h"
 #include "cam_ipe_hw_intf.h"
 #include "cam_icp_hw_mgr_intf.h"
 #include "cam_cpas_api.h"

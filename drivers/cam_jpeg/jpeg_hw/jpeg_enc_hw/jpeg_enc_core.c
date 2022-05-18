@@ -17,7 +17,6 @@
 #include "jpeg_enc_core.h"
 #include "jpeg_enc_soc.h"
 #include "cam_soc_util.h"
-#include "cam_io_util.h"
 #include "cam_jpeg_hw_intf.h"
 #include "cam_jpeg_hw_mgr_intf.h"
 #include "cam_cpas_api.h"
@@ -212,6 +211,7 @@ irqreturn_t cam_jpeg_enc_irq(int irq_num, void *data)
 			} else {
 				CAM_ERR(CAM_JPEG, "unexpected done, no cb");
 			}
+			cam_cpas_notify_event("JPEG FrameDone", 0);
 		} else {
 			CAM_ERR(CAM_JPEG, "unexpected done irq");
 		}

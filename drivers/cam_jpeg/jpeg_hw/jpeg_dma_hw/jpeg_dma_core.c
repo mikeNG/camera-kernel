@@ -17,7 +17,6 @@
 #include "jpeg_dma_core.h"
 #include "jpeg_dma_soc.h"
 #include "cam_soc_util.h"
-#include "cam_io_util.h"
 #include "cam_jpeg_hw_intf.h"
 #include "cam_jpeg_hw_mgr_intf.h"
 #include "cam_cpas_api.h"

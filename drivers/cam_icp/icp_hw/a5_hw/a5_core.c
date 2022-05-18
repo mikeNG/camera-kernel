@@ -23,7 +23,6 @@
 #include "a5_reg.h"
 #include "a5_soc.h"
 #include "cam_soc_util.h"
-#include "cam_io_util.h"
 #include "hfi_intf.h"
 #include "hfi_sys_defs.h"
 #include "cam_icp_hw_mgr_intf.h"

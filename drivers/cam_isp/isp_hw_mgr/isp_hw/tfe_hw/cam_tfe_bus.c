@@ -18,7 +18,6 @@
 #include "cam_tfe_bus.h"
 #include "cam_tfe_irq.h"
 #include "cam_tfe_soc.h"
-#include "cam_debug_util.h"
 #include "cam_cpas_api.h"
 
 

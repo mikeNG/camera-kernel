@@ -30,7 +30,6 @@
 #include "cam_smmu_api.h"
 #include "cam_mem_mgr.h"
 #include "cam_req_mgr_workq.h"
-#include "cam_mem_mgr.h"
 #include "cam_debug_util.h"
 #include "cam_soc_util.h"
 #include "cam_trace.h"

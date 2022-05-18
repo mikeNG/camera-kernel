@@ -15,7 +15,6 @@
 #include "cam_packet_util.h"
 #include "cam_mem_mgr.h"
 #include "cam_cpas_api.h"
-#include "cam_compat.h"
 
 #define SCM_SVC_CAMERASS 0x18
 #define SECURE_SYSCALL_ID 0x6
