@@ -17,7 +17,6 @@
 #include "cam_sfe_bus.h"
 #include "cam_sfe_bus_rd.h"
 #include "cam_sfe_core.h"
-#include "cam_debug_util.h"
 #include "cam_cpas_api.h"
 
 static const char drv_name[] = "sfe_bus_rd";

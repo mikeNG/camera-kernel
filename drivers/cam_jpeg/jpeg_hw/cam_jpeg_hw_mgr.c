@@ -24,10 +24,10 @@
 #include "cam_smmu_api.h"
 #include "cam_mem_mgr.h"
 #include "cam_req_mgr_workq.h"
-#include "cam_mem_mgr.h"
 #include "cam_cdm_intf_api.h"
 #include "cam_debug_util.h"
 #include "cam_common_util.h"
+#include "cam_cpas_api.h"
 
 #define CAM_JPEG_HW_ENTRIES_MAX  20
 #define CAM_JPEG_CHBASE          0
@@ -150,6 +150,8 @@ static int cam_jpeg_process_next_hw_update(void *priv, void *data,
 		buf_data->evt_param = CAM_SYNC_JPEG_EVENT_START_HW_ERR;
 		goto end_error;
 	}
+
+	cam_cpas_notify_event("JPEG Submit", config_args->request_id);
 
 	return 0;
 end_error:

@@ -519,6 +519,20 @@ static int cam_flash_high(
 	return rc;
 }
 
+#ifdef OPLUS_FEATURE_CAMERA_COMMON
+int cam_flash_on(struct cam_flash_ctrl *flash_ctrl,
+	struct cam_flash_frame_setting *flash_data,
+	int mode) {
+	int rc = 0;
+	if (mode == 0) {
+		rc = cam_flash_low(flash_ctrl, flash_data);
+	} else if (mode == 1) {
+		rc = cam_flash_high(flash_ctrl, flash_data);
+	}
+	return rc;
+}
+#endif
+
 static int cam_flash_duration(struct cam_flash_ctrl *fctrl,
 	struct cam_flash_frame_setting *flash_data)
 {
@@ -1745,15 +1759,10 @@ int cam_flash_pmic_pkt_parser(struct cam_flash_ctrl *fctrl, void *arg)
 
 		if ((csl_packet->header.op_code & 0xFFFFF) ==
 			CAM_FLASH_PACKET_OPCODE_SET_OPS) {
-			add_req.skip_before_applying |= SKIP_NEXT_FRAME;
 			add_req.trigger_eof = true;
-
-			if (flash_data && (flash_data->opcode !=
-				CAMERA_SENSOR_FLASH_OP_FIREDURATION))
-				add_req.skip_before_applying |= 1;
-			else
-				add_req.skip_before_applying = 0;
+			add_req.skip_before_applying = 0;
 		} else {
+			add_req.trigger_eof = false;
 			add_req.skip_before_applying = 0;
 		}
 		CAM_DBG(CAM_FLASH,
